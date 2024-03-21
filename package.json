@@ -1,32 +1,7 @@
 {
-	"name": "htmltagwrap",
-	"version": "0.0.1",
-	"private": false,
-	"description": "Wraps selected code with HTML tags",
-	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
-	"bugs": {
-		"url": "https://github.com/CodeEditorLand/Foundation/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Playform",
-		"email": "Hello@Playform.Cloud",
-		"url": "https://playform.cloud"
-	},
-	"type": "module",
-	"main": "./out/src/extension",
-	"scripts": {
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-		"postinstall": "typings install && node ./node_modules/vscode/bin/install",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
-		"test:LinuxAndOSX": "node ./node_modules/vscode/bin/test",
-		"typings": "typings",
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
-	},
+	"activationEvents": [
+		"onCommand:extension.htmlTagWrap"
+	],
 	"contributes": {
 		"commands": [
 			{
@@ -43,9 +18,7 @@
 			}
 		]
 	},
-	"activationEvents": [
-		"onCommand:extension.htmlTagWrap"
-	],
+	"description": "Wraps selected code with HTML tags",
 	"devDependencies": {
 		"chai": "5.1.0",
 		"fs-extra": "11.2.0",
@@ -54,12 +27,20 @@
 		"typings": "1.3.2",
 		"vscode": "0.11.17"
 	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"icon": "images/htmlTagWrap_icon.svg",
 	"galleryBanner": {
 		"color": "#596877",
 		"theme": "dark"
-	}
+	},
+	"icon": "images/htmlTagWrap_icon.svg",
+	"main": "./out/src/extension",
+	"name": "htmltagwrap",
+	"scripts": {
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "typings install && node ./node_modules/vscode/bin/install",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"test:LinuxAndOSX": "node ./node_modules/vscode/bin/test",
+		"typings": "typings",
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
+	},
+	"type": "module"
 }
