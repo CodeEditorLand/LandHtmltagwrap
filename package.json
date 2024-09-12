@@ -20,9 +20,9 @@
 	},
 	"description": "Wraps selected code with HTML tags",
 	"devDependencies": {
-		"chai": "^3.5.0",
-		"fs-extra": "^0.30.0",
-		"typings": "^1.3.2"
+		"chai": "3.5.0",
+		"fs-extra": "0.30.0",
+		"typings": "1.3.2"
 	},
 	"galleryBanner": {
 		"color": "#596877",
