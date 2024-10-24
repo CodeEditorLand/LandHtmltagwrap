@@ -20,7 +20,7 @@
 	},
 	"description": "Wraps selected code with HTML tags",
 	"devDependencies": {
-		"chai": "5.1.1",
+		"chai": "5.1.2",
 		"fs-extra": "11.2.0",
 		"typings": "2.1.1"
 	},
