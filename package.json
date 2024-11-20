@@ -1,12 +1,7 @@
 {
-	"name": "htmltagwrap",
-	"description": "Wraps selected code with HTML tags",
-	"main": "./out/src/extension",
-	"scripts": {
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-		"test:LinuxAndOSX": "node ./node_modules/vscode/bin/test",
-		"typings": "typings"
-	},
+	"activationEvents": [
+		"onCommand:extension.htmlTagWrap"
+	],
 	"contributes": {
 		"commands": [
 			{
@@ -23,17 +18,22 @@
 			}
 		]
 	},
-	"activationEvents": [
-		"onCommand:extension.htmlTagWrap"
-	],
+	"description": "Wraps selected code with HTML tags",
 	"devDependencies": {
 		"chai": "5.1.2",
 		"fs-extra": "11.2.0",
 		"typings": "2.1.1"
 	},
-	"icon": "images/htmlTagWrap_icon.svg",
 	"galleryBanner": {
 		"color": "#596877",
 		"theme": "dark"
+	},
+	"icon": "images/htmlTagWrap_icon.svg",
+	"main": "./out/src/extension",
+	"name": "htmltagwrap",
+	"scripts": {
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"test:LinuxAndOSX": "node ./node_modules/vscode/bin/test",
+		"typings": "typings"
 	}
 }
