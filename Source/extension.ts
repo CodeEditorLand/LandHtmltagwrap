@@ -4,8 +4,10 @@ import * as vscode from "vscode";
 
 function getTabString(editor: vscode.TextEditor): string {
 	let spacesUsed = <boolean>editor.options.insertSpaces;
+
 	if (spacesUsed) {
 		let numOfUsedSpaces = <number>editor.options.tabSize;
+
 		return " ".repeat(numOfUsedSpaces);
 	}
 
@@ -26,11 +28,14 @@ export function activate() {
 		// The code you place here will be executed every time your command is executed
 
 		var editor = vscode.window.activeTextEditor;
+
 		if (editor != undefined) {
 			var selection = editor.selection;
+
 			var selectedText = editor.document.getText(selection);
 
 			var firstIndex = 1;
+
 			var lastIndex = selectedText.length;
 
 			console.log("selection is: " + selectedText);
@@ -41,15 +46,19 @@ export function activate() {
 			console.log("selection.end.character: " + selection.end.character);
 
 			var selectionStart = selection.start;
+
 			var selectionEnd = selection.end;
 
 			if (selectionEnd.line > selectionStart.line) {
 				//Wrap it as a block
 				var lineAbove = selectionStart.line - 1;
+
 				var lineBelow = selectionEnd.line + 1;
 
 				//console.log('tabSize = ' + tabSize);
+
 				let tabSizeSpace = getTabString(editor);
+
 				var selectionStart_spaces = editor.document
 					.lineAt(selectionStart.line)
 					.text.substring(0, selectionStart.character);
@@ -103,6 +112,7 @@ export function activate() {
 							console.log("Edit applied!");
 
 							var bottomTagLine = lineBelow + 1;
+
 							var firstTagSelectionSelection: vscode.Selection =
 								new vscode.Selection(
 									selectionStart.line,
@@ -110,6 +120,7 @@ export function activate() {
 									selectionStart.line,
 									selectionStart.character + 2,
 								);
+
 							var lastTagSelectionSelection: vscode.Selection =
 								new vscode.Selection(
 									bottomTagLine,
@@ -117,6 +128,7 @@ export function activate() {
 									bottomTagLine,
 									selectionStart.character + 3,
 								);
+
 							var tagSelections: vscode.Selection[] = [
 								firstTagSelectionSelection,
 								lastTagSelectionSelection,
@@ -159,6 +171,7 @@ export function activate() {
 									selectionStart.line,
 									selectionStart.character + 2,
 								);
+
 							var lastTagSelectionSelection: vscode.Selection =
 								new vscode.Selection(
 									selectionEnd.line,
@@ -166,6 +179,7 @@ export function activate() {
 									selectionEnd.line,
 									selectionEnd.character + 3 + 3,
 								);
+
 							var tagSelections: vscode.Selection[] = [
 								firstTagSelectionSelection,
 								lastTagSelectionSelection,
