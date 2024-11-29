@@ -39,10 +39,13 @@ export function activate() {
 			var lastIndex = selectedText.length;
 
 			console.log("selection is: " + selectedText);
+
 			console.log("length is: " + lastIndex);
+
 			console.log(
 				"selection.start.character: " + selection.start.character,
 			);
+
 			console.log("selection.end.character: " + selection.end.character);
 
 			var selectionStart = selection.start;
@@ -75,20 +78,25 @@ export function activate() {
 							),
 							"\n" + selectionStart_spaces + "</p>",
 						);
+
 						editBuilder.insert(
 							new vscode.Position(selectionEnd.line, 0),
 							tabSizeSpace,
 						);
+
 						console.log(
 							"End line done.  Line #: " + selectionEnd.line,
 						);
 
 						for (
 							let lineNumber = selectionEnd.line - 1;
+
 							lineNumber > selectionStart.line;
+
 							lineNumber--
 						) {
 							console.log("FOR Loop line #: " + lineNumber);
+
 							editBuilder.insert(
 								new vscode.Position(lineNumber, 0),
 								tabSizeSpace,
@@ -103,6 +111,7 @@ export function activate() {
 							),
 							"<p>\n" + selectionStart_spaces + tabSizeSpace,
 						);
+
 						console.log(
 							"Start Line done.  Line #: " + selectionStart.line,
 						);
@@ -138,6 +147,7 @@ export function activate() {
 						},
 						(err) => {
 							console.log("Edit rejected!");
+
 							console.error(err);
 						},
 					);
@@ -152,6 +162,7 @@ export function activate() {
 							),
 							"</p>",
 						);
+
 						editBuilder.insert(
 							new vscode.Position(
 								selectionEnd.line,
@@ -189,6 +200,7 @@ export function activate() {
 						},
 						(err) => {
 							console.log("Edit rejected!");
+
 							console.error(err);
 						},
 					);
