@@ -1,25 +1,7 @@
 {
-	"name": "htmltagwrap",
-	"version": "0.0.3",
-	"description": "Wraps selected code with HTML tags",
-	"homepage": "https://github.com/Microsoft/vscode-htmltagwrap/README.md",
-	"bugs": {
-		"url": "https://github.com/Microsoft/vscode-htmltagwrap/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-htmltagwrap"
-	},
-	"license": "MIT",
-	"publisher": "bradgashler",
-	"main": "./out/src/extension",
-	"scripts": {
-		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-		"postinstall": "typings install && node ./node_modules/vscode/bin/install",
-		"test:LinuxAndOSX": "node ./node_modules/vscode/bin/test",
-		"typings": "typings",
-		"vscode:prepublish": "node ./node_modules/vscode/bin/compile"
-	},
+	"activationEvents": [
+		"onCommand:extension.htmlTagWrap"
+	],
 	"contributes": {
 		"commands": [
 			{
@@ -36,10 +18,8 @@
 			}
 		]
 	},
-	"activationEvents": [
-		"onCommand:extension.htmlTagWrap"
-	],
 	"dependencies": {},
+	"description": "Wraps selected code with HTML tags",
 	"devDependencies": {
 		"chai": "^3.5.0",
 		"fs-extra": "^0.30.0",
@@ -47,12 +27,16 @@
 		"typings": "^1.3.2",
 		"vscode": "^0.11.17"
 	},
-	"engines": {
-		"vscode": "^1.0.0"
-	},
-	"icon": "images/htmlTagWrap_icon.svg",
 	"galleryBanner": {
 		"color": "#596877",
 		"theme": "dark"
+	},
+	"icon": "images/htmlTagWrap_icon.svg",
+	"main": "./out/src/extension",
+	"name": "htmltagwrap",
+	"scripts": {
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"test:LinuxAndOSX": "node ./node_modules/vscode/bin/test",
+		"typings": "typings"
 	}
 }
