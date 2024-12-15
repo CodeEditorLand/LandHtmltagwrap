@@ -90,9 +90,7 @@ export function activate() {
 
 						for (
 							let lineNumber = selectionEnd.line - 1;
-
 							lineNumber > selectionStart.line;
-
 							lineNumber--
 						) {
 							console.log("FOR Loop line #: " + lineNumber);
