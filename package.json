@@ -28,9 +28,9 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"chai": "3.5.0",
-		"fs-extra": "0.30.0",
-		"typings": "1.3.2"
+		"chai": "5.1.2",
+		"fs-extra": "11.2.0",
+		"typings": "2.1.1"
 	},
 	"icon": "images/htmlTagWrap_icon.svg",
 	"galleryBanner": {
